@@ -1,0 +1,10 @@
+List file
+
+•	ls	 – short listing of files and folders in current directory
+•	ls -l 	– Long listing where it shows files folders in a current Directory
+•	ls -lt	-- Show the long list of files and folders in Ascending order of modified time stamp
+•	ls -l *.html 	-- long listing of files that ends with .html
+•	ls -l test		-- Long listing of files and folders from test directory
+•	ls -la 	-- Shows the hidden files and folders also
+o	Single dot (.) − This represents the current directory.
+o	Double dot (..) − This represents the parent directory.
