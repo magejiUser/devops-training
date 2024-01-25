@@ -1,0 +1,3 @@
+you will need to replace the placeholder URLs in the JSON with the actual URLs of your images. Here's the JSON with placeholder URLs:
+
+json
