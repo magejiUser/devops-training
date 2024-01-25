@@ -1,3 +1,12 @@
-you will need to replace the placeholder URLs in the JSON with the actual URLs of your images. Here's the JSON with placeholder URLs:
 
-json
+Permissions on Files and Folders
+
+How do I remove the read permissions from others for file2 by using symbolic mode?
+# chmod o-r file2
+This example removes (-) the read (r) permission from others (o) for file2.
+Here's another simple example:
+How do I grant the read and write permissions to the group for file2?
+# chmod g+rw file2
+This one gives (+) read and write (rw) to the group (g) for file2.
+How do I set permissions for a directory and all of its contents by using symbolic mode?
+# chmod -R u=rwx,g+rw,o-rwx Resources
