@@ -12,14 +12,13 @@ resource "aws_instance" "myfirst" {
 
 provisioner "remote-exec" {
     inline                  = [
-        "sudo apt update -y",
-	"sudo apt install apache2 -y",
-	"sudo service apache2 start"
+	"sudo apt install httpd -y",
+	"sudo service httpd start"
     ]
 
     connection {
         type                = "ssh"
-        user                = "ubuntu"
+        user                = "ec2-user"
         private_key         = file("./DevOps.pem")
         host                = aws_instance.myfirst.public_ip
     }
