@@ -12,7 +12,7 @@ resource "aws_instance" "myfirst" {
 
 provisioner "remote-exec" {
     inline                  = [
-	"sudo apt install httpd -y",
+	"sudo yum install httpd -y",
 	"sudo service httpd start"
     ]
 
