@@ -9,5 +9,8 @@ resource "aws_instance" "myfirst" {
   instance_type   = "t2.micro"
   key_name        = "DevOps"
   security_groups = ["default"]
+  tags = {
+    Name = "HelloWorld"
+  }
 }
 
