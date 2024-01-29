@@ -1,0 +1,81 @@
+Docker is to create a containers from one image at a time
+
+1. docker images -- To List down the docker images
+
+2. docker image inspect <ImageID> -- Gives complete details of the Image
+   docker container inspect <ContainerID> -- Gives complete details of the Container
+
+3. docker ps -- Lists the active docker containers
+
+4. docker ps -a -- to list all the containers (active and inactive)
+
+5. docker stop <ContainerID> -- To Stop the running Container
+
+6. docker start <ContainerID> -- To Start the Container
+
+7. docker rm <ContainerID> -- To remove the container
+
+8. docker rm -f <ContainerID> -- To remove the container forcefully
+
+9. docker build -t <ImageName>:<version> .   -- To Build Docker image with Default Dockerfile
+
+10. docker build -t <ImageName> -f Test/mydockerfile .  -- To Build Docker image with Custom Dockerfile
+
+11. docker run -d -p 8080:8080 <ImageID:Version> -- Create the Container (Pull+Create)
+
+12. docker run --name mycontainer  -d -p 8081:8080 myapp:1.0
+
+13. docker container ls --> List of the active/running Containers
+
+14. docker container logs <ContainerID>
+
+15. docker run -it <ImageName> /bin/bash -- Creates the Container from the Image and logs you into the Container
+
+16. docker exec -it <containerID> /bin/bash -- Login to the Container at any point of time
+
+17. docker pull myregistry.local:5000/testing/test-image -- To pull the Image from Local Registry
+
+18. docker push <imageName> -- skatta3/mywebapp -- To Push the Image to Docker Hub
+
+•	docker login docker.io
+•	docker image tag <imagename> <DockerHub-Username>/<imagename>:latest
+•	docker image push <DockerHub-Username>/<tagname>
+•	docker pull skatta3/imagename
+
+
+19. docker push localhost.localdomain:5000/ubuntu  -- To Push into Local Registry
+
+20. docker rm -f $(docker ps -a -q) –-- remove all containers at a time
+
+21. docker rmi <ImageID> --> To remove the Image
+
+22. docker rmi $(docker images -a -q) --> To remove all the images
+
+Docker Compose
+Docker-Compose is a service with which you can create multiple containers from multiple images with single command at a time
+
+23. sudo apt install docker-compose -- Install docker compose 
+
+24. docker-compose --version
+
+25. docker-compose.yml (yaml)
+version: "3"
+services:
+    web:
+      image: nginx
+      ports:
+        - "80:80"
+    database:
+      image: redis
+
+26. docker-compose up -d -- To Start all the services from docker-compose.yml file
+
+27. docker-compose up -d --scale database=4  -- To Scale up or down the services started within Compose
+
+28 docker-compose down -- It deletes all the containers that are started with docker compose
+
+docker-compose -f docker-compose1.yaml up -d -- To specify custom docker-compose file
+
+29. docker stats   -- To list the resource utilization of Docker Containers
+
+
