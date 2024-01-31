@@ -1,0 +1,54 @@
+# ansible-galaxy init myapache
+[ansible@ip-172-31-23-242 Roles]$ tree
+.
+├── myapache
+│   ├── defaults
+│   │   └── main.yml
+│   ├── files
+│   ├── handlers
+│   │   └── main.yml
+│   ├── meta
+│   │   └── main.yml
+│   ├── README.md
+│   ├── tasks
+│   │   └── main.yml
+│   ├── templates
+│   ├── tests
+│   │   ├── inventory
+│   │   └── test.yml
+│   └── vars
+│       └── main.yml
+└── runrole.yaml
+
+9 directories, 9 files
+#runrole.yaml
+---
+ - hosts: all
+   become: yes
+   roles:
+   - myapache
+
+# vars/main.yml
+---
+# vars file for apache-webserver
+package_name: httpd
+
+
+#tasks/main.yml
+---
+# tasks file for LAMP_Stack
+- name: Install httpd Package
+  yum: name={{package_name}} state=latest
+  notify:
+  - restart apache
+
+
+# handlers/main.yml
+---
+# handlers file for LAMP_Stack
+- name: restart apache
+  service: name=httpd state=restarted
+
+
+
+
