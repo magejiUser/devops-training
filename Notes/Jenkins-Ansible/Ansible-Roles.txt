@@ -31,23 +31,23 @@
 # vars/main.yml
 ---
 # vars file for apache-webserver
-package_name: httpd
+package_name: apache2
 
 
 #tasks/main.yml
 ---
-# tasks file for LAMP_Stack
-- name: Install httpd Package
-  yum: name={{package_name}} state=latest
+# tasks file for myapache
+- name: Install Apache Package
+  apt: name={{package_name}} state=latest
   notify:
   - restart apache
 
 
 # handlers/main.yml
 ---
-# handlers file for LAMP_Stack
+# handlers file for myapache
 - name: restart apache
-  service: name=httpd state=restarted
+  service: name=apache2 state=restarted
 
 
 
